@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Citrix AI Presale Bot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header glass">
+        <div class="brand-wrap">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <div>
+            <p class="brand-kicker">Assistente Presale</p>
+            <h1>Citrix AI Robot</h1>
+          </div>
+        </div>
+        <p class="header-text">
+          Un consulente virtuale orientato al valore: risposte tecniche, use case e
+          promozione delle soluzioni Citrix.
+        </p>
+      </header>
+
+      <main class="content-grid">
+        <section class="panel glass library-panel">
+          <div class="panel-title-row">
+            <h2>Library Knowledge</h2>
+            <span id="knowledge-count" class="pill">0 documenti</span>
+          </div>
+          <p class="panel-subtitle">
+            Carica documenti di prodotto, FAQ o note commerciali per alimentare il robot.
+          </p>
+
+          <label class="upload-box" for="knowledge-input">
+            <input
+              id="knowledge-input"
+              type="file"
+              accept=".txt,.md,.json"
+              multiple
+              hidden
+            />
+            <span class="upload-title">Aggiungi documenti</span>
+            <span class="upload-hint">Supportati: TXT, MD, JSON</span>
+          </label>
+
+          <ul id="knowledge-list" class="knowledge-list" aria-live="polite"></ul>
+
+          <div class="library-actions">
+            <button id="clear-library" class="btn btn-secondary" type="button">
+              Svuota library
+            </button>
+          </div>
+        </section>
+
+        <section class="panel glass chat-panel">
+          <div class="panel-title-row">
+            <h2>Chat con il Robot</h2>
+            <span class="pill accent">Online</span>
+          </div>
+
+          <div id="chat-log" class="chat-log" aria-live="polite">
+            <article class="message bot">
+              <p>
+                Ciao! Sono il tuo assistente Citrix. Posso aiutarti su VDI, sicurezza,
+                digital workspace, licensing e value proposition per il cliente.
+              </p>
+            </article>
+          </div>
+
+          <form id="chat-form" class="chat-form">
+            <textarea
+              id="chat-input"
+              rows="3"
+              placeholder="Scrivi una richiesta del cliente..."
+              required
+            ></textarea>
+            <button class="btn btn-primary" type="submit">Invia</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
